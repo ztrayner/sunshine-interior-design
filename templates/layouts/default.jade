@@ -60,7 +60,7 @@ html(lang='en')
 									li: a(href='/keystone') Admin
 								li: a(href='/keystone/signout') Sign Out
 							else
-								li: a(href='/keystone/signin') Sign In
+								//li: a(href='/keystone/signin') Sign In
 						ul.nav.navbar-nav.pull-right
 							each link in navLinks
 								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
