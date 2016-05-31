@@ -11,11 +11,11 @@ var keystone = require('keystone');
 
 keystone.init({
 
-	'name': 'sunshine-interior-design',
-	'brand': 'sunshine-interior-design',
+	'name': 'Sunshine Interior Design',
+	'brand': 'Sunshine Interior Design',
 
 	'sass': 'public',
-'static': 'public',
+	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
@@ -58,16 +58,16 @@ keystone.set('routes', require('./routes'));
 // default email templates, you may remove them if you're using your own.
 
 keystone.set('email locals', {
-	logo_src: '/images/logo-email.gif',
-	logo_width: 194,
-	logo_height: 76,
+	logo_src: '/images/logo-email.png',
+	logo_width: 120,
+	logo_height: 120,
 	theme: {
 		email_bg: '#f9f9f9',
-		link_color: '#2697de',
+		link_color: '#ffe561',
 		buttons: {
 			color: '#fff',
-			background_color: '#2697de',
-			border_color: '#1a7cb7',
+			background_color: '#ffe561',
+			border_color: '#ffe561',
 		},
 	},
 });
@@ -75,7 +75,10 @@ keystone.set('email locals', {
 // Load your project's email test routes
 
 keystone.set('email tests', require('./routes/emails'));
-
+// Use Mailgun
+keystone.set('email transport', 'mailgun');
+keystone.set('mailgun api key', 'key-9bd18424bd1c15671dff1875b6125214');
+keystone.set('mailgun domain', 'mg.sunshineinteriordesign.com');
 
 
 // Configure the navigation bar in Keystone's Admin UI
