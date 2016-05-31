@@ -1,0 +1,118 @@
+extends ../layouts/default
+
+block content
+	section#hero.hero.home
+		.hero-text.white
+			h1.hero-header Sunshine Interior Design
+			h2.hero-slogan Personalized interior design for beautiful living spaces
+			a.btn.btn-lrg.btn-primary.hero-cta(href='#about') Get an Estimate
+	section#services.home-section.text-center.services-section
+		.heading-about.marginbot-10
+			.container
+				.row
+					h3.section-heading Services Offered
+					p.section-description.section-heading-description South Jordan, Utah interior designer servicing Salt Lake, Utah, Davis, and Wasatch counties.
+					.col-sm-6.col-md-3
+						h4.section-heading Consultations
+						p.section-description
+							|  In-store and in-home consultations are available at an hourly rate.
+					.col-sm-6.col-md-3
+						h4.section-heading Packaged Design
+						p.section-description
+							|  Interior design services packaged according to your needs.
+					.col-sm-6.col-md-3
+						h4.section-heading Purchasing
+						p.section-description
+							|  I can provide access to a wide array of products from wholesale vendors with competitive pricing.
+					.col-sm-6.col-md-3
+						h4.section-heading Shopping
+						p.section-description
+							|  Shopping can be overwhelming. I'll do the work with retailers, design centers, wholesalers, and internet retailers on your behalf.
+	section#about.home-section.text-center.bg-gray.about-section
+		.heading-about.marginbot-10
+			.container
+				.row
+					.col-sm-8.col-md-5.centered
+						h3.section-heading About the Designer
+		.container
+			.row
+				.col-sm-8.col-md-5.centered
+					.profile.boxed-grey
+						.inner
+							h5 Sandy Trayner
+							p.subtitle Owner / Interior Designer
+							.avatar
+								img.img-responsive.centered(src='http://i2.wp.com/www.sunshineinteriordesignllc.com/wp-content/uploads/2014/06/Sandy.jpg?zoom=2&resize=176%2C300', alt='')
+							p.profile-description
+								|  I am a life-long resident of Utah and received my Bachelor of Fine Arts degree in Interior Design from Brigham Young University. I enjoy interior design, spending time with my family, and traveling.
+	section#recent-projects.home-section.text-center.recent-projects-section
+		.container
+			.row.no-gutter
+				h3.section-heading Recent Projects
+				if galleries.length
+					- var i = 0;
+					each gallery in galleries
+						.col-sm-6.col-md-3
+							.small-gutter
+								img(src=gallery._.heroImage.limit(250,280)).img-responsive.full-width
+								h4.section-heading.img-caption= gallery.name
+						- i++;
+						- if (i === 3) {break;}
+				else
+					h4.text-muted Recent Projects Coming Soon
+				.row.col-sm-12.text-right
+					a(href='/gallery').see-more-link See More 
+						span.glyphicon.glyphicon-arrow-right(style="top:3px;")
+	section#contact.home-section.text-center.bg-gray
+		.container
+			.row
+				.col-lg-8.col-lg-offset-2
+					h2.section-heading Get in touch
+					p
+						| Please fill out the following form with a your information and any questions you may have. I will get back to you as soon as possible.
+		.container
+			.row
+				.col-lg-8.col-md-offset-2
+					.boxed-grey
+						form(method='post')#contact-form
+							input(type='hidden', name='action', value='contact')
+							.row
+								.col-md-6
+									.form-group(class=validationErrors.name ? 'has-error' : null)
+										label(for='name')
+											| Name
+										input#name.form-control(type='text', placeholder='Enter name', required='required', name='name.full', value=formData['name.full'])
+									.form-group(class=validationErrors.email ? 'has-error' : null)
+										label(for='email')
+											| Email Address
+										.input-group
+											span.input-group-addon
+												span.glyphicon.glyphicon-envelope
+											input#email.form-control(type='email', placeholder='Enter email', required='required', name='email', value=formData.email)
+									.form-group
+										label Phone
+										.input-group
+											span.input-group-addon
+												span.glyphicon.glyphicon-phone
+											input(type='text', name='phone', value=formData.phone, placeholder='(optional)').form-control
+									.form-group(class=validationErrors.enquiryType ? 'has-error' : null)
+										label What are you contacting us about?
+										select(name='enquiryType').form-control
+											option(value='') (select one)
+											each type in enquiryTypes
+												option(value=type.value, selected=formData.enquiryType == type.value)= type.label
+								.col-md-6
+									.form-group
+										label(for='name')
+											| Message
+										textarea#message.form-control(name='message', placeholder='Your message...' rows=13).form-control= formData.message
+								.col-md-12
+									.form-actions
+										button#btnContactUs.btn.btn-primary.black.pull-right(type='submit')
+											| Send Message
+					.widget-contact.row
+						.col-lg-6.centered
+							address
+								strong Sunshine Interior Design
+								br
+								| South Jordan, UT 84095
