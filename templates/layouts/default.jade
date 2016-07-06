@@ -13,8 +13,9 @@ html(lang='en')
 		link(rel="shortcut icon", href="/favicon.png", type="image/x-icon")
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
-		link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:400,700,300' rel='stylesheet')
+		link(href='//fonts.googleapis.com/css?family=Montserrat:400,700|Lato:400,700,300' rel='stylesheet')
 		link(href="/styles/site.css", rel="stylesheet")
+		script(src='//www.google.com/recaptcha/api.js')
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
@@ -88,37 +89,29 @@ html(lang='en')
 				.row
 					.col-xs-6.col-sm-6.col-md-3.column
 						h5 Areas Served
-						ul.nav
+						ul.footer-links
 							li
-								a South Jordan
+								p South Jordan
 							li
-								a Salt Lake City
+								p Salt Lake City
 							li
-								a Sandy
+								p Sandy
 							li
-								a Draper
-							li
-								a Lehi
-							li
-								a Provo
+								p Draper
 					.col-xs-6.col-md-3.column
 						h5 &nbsp;
-						ul.nav
+						ul.footer-links
 							li
-								a Park City
+								p Cottonwood Heights
 							li
-								a Orem
+								p Holladay
 							li
-								a American Fork
+								p Murray
 							li
-								a Bountiful
-							li
-								a Alpine
-							li
-								a & More
+								p & More
 					.col-xs-6.col-md-3.column
 						h5 More Sunshine
-						ul.nav
+						ul.footer-links
 							li
 								a(href='/blog') Blog
 							li
@@ -130,16 +123,13 @@ html(lang='en')
 							//li
 								//a(href='#') Terms & Conditions
 					.col-xs-6.col-md-3.column
-						h5 Follow Us
+						h5 Follow the Sunshine
 						ul.nav
-							//li
-								//a(href='#') Twitter
-							li
-								a(href='https://www.facebook.com/SunshineInteriorDesignLLC') Facebook
-							li
-								a(href='https://plus.google.com/110522872717197568010') Google+
-							//li
-								//a(href='#') Pinterest
+							li.social-icons
+								a.facebook-icon.social-icon.inline-block(href='https://www.facebook.com/SunshineInteriorDesignLLC')
+									img(src="//res.cloudinary.com/ztrain/image/upload/v1467659239/1467677044_facebook_square_zzmdpj.svg")
+								a.google-plus-icon.social-icon.inline-block(href='https://plus.google.com/110522872717197568010')
+									img(src="//res.cloudinary.com/ztrain/image/upload/v1467659239/1467677171_google_square_a9lbki.svg")
 			.padded-top
 				.footer-credits
 					p.text-right.no-margin &copy; #{new Date().getFullYear()} Sunshine Interior Design
@@ -158,6 +148,9 @@ html(lang='en')
 	//- Customise which Bootstrap javascript files are served by including
 	//- them specifically here, instead of bootstrap-3.3.5.min.js
 	script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
+	script(src='//cdnjs.cloudflare.com/ajax/libs/smooth-scroll/10.0.0/js/smooth-scroll.min.js')
+	script(type='text/javascript').
+		smoothScroll.init();
 
 	//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 	//- which generate links to edit content for users who can access Keystone

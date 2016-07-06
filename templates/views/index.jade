@@ -5,13 +5,13 @@ block content
 		.hero-text.white
 			h1.hero-header Sunshine Interior Design
 			h2.hero-slogan Personalized interior design for beautiful living spaces
-			a.btn.btn-lrg.btn-primary.hero-cta(href='#about') Get an Estimate
+			a.btn.btn-lrg.btn-primary.hero-cta(href='#contact' data-scroll) Get an Estimate
 	section#services.home-section.text-center.services-section
 		.heading-about.marginbot-10
 			.container
 				.row
 					h3.section-heading Services Offered
-					p.section-description.section-heading-description South Jordan, Utah interior designer servicing Salt Lake, Utah, Davis, and Wasatch counties.
+					p.section-description.section-heading-description South Jordan, Utah interior designer providing interior design services within Salt Lake county.
 					.col-sm-6.col-md-3
 						h4.section-heading Consultations
 						p.section-description
@@ -42,7 +42,7 @@ block content
 							h5 Sandy Trayner
 							p.subtitle Owner / Interior Designer
 							.avatar
-								img.img-responsive.centered(src='http://i2.wp.com/www.sunshineinteriordesignllc.com/wp-content/uploads/2014/06/Sandy.jpg?zoom=2&resize=176%2C300', alt='')
+								img.img-responsive.centered(src='//res.cloudinary.com/ztrain/image/upload/v1467655635/sandy-trayner_ogk0a8.jpg', alt='')
 							p.profile-description
 								|  I am a life-long resident of Utah and received my Bachelor of Fine Arts degree in Interior Design from Brigham Young University. I enjoy interior design, spending time with my family, and traveling.
 	section#recent-projects.home-section.text-center.recent-projects-section
@@ -54,8 +54,9 @@ block content
 					each gallery in galleries
 						.col-sm-6.col-md-3
 							.small-gutter
-								img(src=gallery._.heroImage.limit(250,280)).img-responsive.full-width
-								h4.section-heading.img-caption= gallery.name
+								a(href='/gallery')
+									img(src=gallery._.heroImage.limit(250,280)).img-responsive.full-width
+									h4.section-heading.img-caption= gallery.name
 						- i++;
 						- if (i === 3) {break;}
 				else
@@ -105,11 +106,13 @@ block content
 									.form-group
 										label(for='name')
 											| Message
-										textarea#message.form-control(name='message', placeholder='Your message...' rows=13).form-control= formData.message
-								.col-md-12
-									.form-actions
-										button#btnContactUs.btn.btn-primary.black.pull-right(type='submit')
-											| Send Message
+										textarea#message.form-control(name='message', placeholder='Your message...' rows=6).form-control= formData.message
+										.g-recaptcha.pad-t-10.pull-right(data-theme="dark" data-sitekey="6LdmPCQTAAAAAFBAeu2cj2dcNo9mUH-xa_6zuFK0")
+									.form-group
+										.form-actions
+											button#btnContactUs.btn.btn-primary.black.pull-right.margin-t-1em(type='submit')
+												| Send Message
+									
 					.widget-contact.row
 						.col-lg-6.centered
 							address

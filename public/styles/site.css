@@ -5876,6 +5876,21 @@ footer {
   color: #2d2e2f;
   min-height: 100px;
   padding-top: 2em; }
+  footer ul {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0; }
+  footer .footer-links {
+    list-style: none;
+    margin-left: 1em; }
+    footer .footer-links li {
+      padding: 0;
+      margin-top: 1em; }
+  footer .footer-credits {
+    margin: 0 1rem;
+    font-size: 15px; }
 
 .gallery-image img {
   display: block;
@@ -5898,7 +5913,7 @@ footer {
   border-radius: .3rem; }
 
 .hero.home {
-  background: url("//upload.wikimedia.org/wikipedia/commons/c/c4/Ovolo_2AR_living_room.jpg");
+  background: url("//res.cloudinary.com/ztrain/image/upload/v1467523959/jumixjkzqzcob3l60ony.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -6004,9 +6019,6 @@ footer {
   border-radius: 2px;
   box-shadow: #5e6064 0 0 8px; }
 
-.footer-credits {
-  margin: 0 1rem; }
-
 .no-gutter [class*='col-'] {
   padding-left: 0;
   padding-right: 0; }
@@ -6059,6 +6071,26 @@ a.see-more-link {
 
 .no-margin {
   margin: 0; }
+
+.pad-t-10 {
+  padding-top: 10px; }
+
+.margin-t-1em {
+  margin-top: 1em; }
+
+.inline-block {
+  display: inline-block !important; }
+
+.social-icons a.social-icon {
+  height: auto;
+  padding: 0; }
+  .social-icons a.social-icon:hover {
+    background: initial;
+    transform: translateY(-3px) scale(1.06); }
+  .social-icons a.social-icon:not(:first-child) {
+    margin-left: 1em; }
+  .social-icons a.social-icon img {
+    width: 40px; }
 
 @media only screen and (max-width: 768px) {
   h1 {
