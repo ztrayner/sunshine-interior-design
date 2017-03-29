@@ -3,15 +3,16 @@ extends ../layouts/default
 block content
 	section#hero.hero.home
 		.hero-text.white
-			h1.hero-header Sunshine Interior Design
-			h2.hero-slogan Personalized interior design for beautiful living spaces
-			a.btn.btn-lrg.btn-primary.hero-cta(href='#contact' data-scroll) Get an Estimate
+			.hero-text-container
+				h1.hero-header Sunshine Interior Design
+				h2.hero-slogan Personalized interior design for beautiful living spaces
+				a.btn.btn-lrg.btn-primary.hero-cta(href='#contact' data-scroll) Get an Estimate
 	section#services.home-section.text-center.services-section
 		.heading-about.marginbot-10
 			.container
 				.row
 					h3.section-heading Services Offered
-					p.section-description.section-heading-description South Jordan, Utah interior designer providing interior design services within Salt Lake county.
+					h2.section-description.section-heading-description South Jordan, Utah interior designer providing interior design services within Salt Lake county.
 					.col-sm-6.col-md-3
 						h4.section-heading Consultations
 						p.section-description
@@ -112,7 +113,7 @@ block content
 										.form-actions
 											button#btnContactUs.btn.btn-primary.black.pull-right.margin-t-1em(type='submit')
 												| Send Message
-									
+
 					.widget-contact.row
 						.col-lg-6.centered
 							address
